@@ -1,8 +1,14 @@
 <template>
   <div class="div">
-    <div v-show="test" class="counter">{{this.$store.state.count}}</div>
+    <div v-show="test" class="counter">{{count}}</div>
     <button @click="increment()">+</button>
     <button @click="decrement()">-</button>
+
+    <div class="modal" v-show="this.$store.state.showModal">
+      <h2>TEST MODAL TO SHOW</h2>
+      <span>Lorem, ipsum dolor sit amet consectetur quia eusperiores ducimus odit aperiam id aliquam qui eos unde corrupti!</span>
+
+    </div>
 
       <Test/>
   </div>
@@ -24,6 +30,9 @@ export default {
     Test
   },
   computed: {
+    count() {
+      return this.$store.state.count;
+    }
   },
   created(){
   },
@@ -69,4 +78,13 @@ button{
   }
 
 }
+  .modal{
+    background: rgba(65, 105, 225, 0.616);
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    right:42.8%;
+    top: 7%;
+    padding: 10px;
+  }
 </style>

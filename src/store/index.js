@@ -7,19 +7,32 @@ export default new Vuex.Store({
 
 
   state: {
-      count: 0
+		count: 0,
+		counts: 0,
+		showModal:true
   },
 
 
 
-  mutations: {
-    increment (state) {
-      state.count++
-  },
-    decrement (state) {
-      state.count--
-  }
-  },
+mutations: {
+		increment (state) {
+			state.count++
+			state.counts = state.counts + 20;	
+		},
+		decrement (state) {
+			state.count--
+
+		},
+		modalTogle (state) {
+			state.showModal = !state.showModal
+		}
+
+	},
+actions: {
+
+
+}
+
 
 })
 

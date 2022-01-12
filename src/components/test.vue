@@ -1,5 +1,8 @@
 <template>
   <div class="test">
+    <h2>NEW COMPONENT</h2>
+    <div>{{this.$store.state.counts}}</div>
+    <button @click=" ModalTest()" >SHOW MODAL</button>
   </div>
 </template>
 
@@ -19,7 +22,10 @@ export default {
   mounted () {
   },
   methods:{
-
+   ModalTest() {
+      this.$store.commit('modalTogle')
+      
+    },
   }
 
 }
