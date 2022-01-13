@@ -9,7 +9,7 @@
       <span>Lorem, ipsum dolor sit amet consectetur quia eusperiores ducimus odit aperiam id aliquam qui eos unde corrupti!</span>
 
     </div>
-
+      <input :value="seachValueTest" @input="updateMessage" type="text">
       <Test/>
   </div>
 
@@ -22,8 +22,8 @@ export default {
   name: 'HelloWorld',
   data(){
     return{
-      test:true
-
+      test:true,
+      seachValueTest:'ghgh'
     }
   },
   components:{
@@ -32,9 +32,15 @@ export default {
   computed: {
     count() {
       return this.$store.state.count;
-    }
+    },
+
+
+
+
+
   },
   created(){
+    this.decrement()
   },
   mounted () {
   },
@@ -47,7 +53,14 @@ export default {
     decrement(){
       this.$store.commit('decrement')
       console.log(this.$store.state.count)
+      this.$store.dispatch('GetValue', this.seachValueTest)
+    },
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    updateMessage (e) {
+      this.$store.commit('updateMessage', e.target.value)
     }
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
   }
 
 }

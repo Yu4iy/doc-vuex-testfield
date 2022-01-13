@@ -9,7 +9,8 @@ export default new Vuex.Store({
   state: {
 		count: 0,
 		counts: 0,
-		showModal:true
+		showModal:true,
+		testInput:''
   },
 
 
@@ -25,7 +26,15 @@ mutations: {
 		},
 		modalTogle (state) {
 			state.showModal = !state.showModal
-		}
+		},
+
+
+
+// ------------
+		updateMessage (state, message) {
+			state.testInput = message
+		},
+// ----------------		    
 
 	},
 actions: {
