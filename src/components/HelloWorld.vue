@@ -1,6 +1,6 @@
 <template>
   <div class="div">
-    <div v-show="test" class="counter">{{count}}</div>
+    <div v-show="test" class="counter">{{count}} INPUT:{{this.$store.state.testInput}}</div>
     <button @click="increment()">+</button>
     <button @click="decrement()">-</button>
 
@@ -9,7 +9,7 @@
       <span>Lorem, ipsum dolor sit amet consectetur quia eusperiores ducimus odit aperiam id aliquam qui eos unde corrupti!</span>
 
     </div>
-      <input :value="seachValueTest" @input="updateMessage" type="text">
+      <input :value="seachValueTest" @keydown.enter ="updateMessage" type="text">
       <Test/>
   </div>
 
@@ -23,7 +23,7 @@ export default {
   data(){
     return{
       test:true,
-      seachValueTest:'ghgh'
+      seachValueTest:''
     }
   },
   components:{

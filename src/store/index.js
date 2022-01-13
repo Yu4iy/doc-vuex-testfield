@@ -32,6 +32,7 @@ mutations: {
 
 // ------------
 		updateMessage (state, message) {
+
 			state.testInput = message
 		},
 // ----------------		    
